@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+  <meta charset="utf-8">
+  <meta name="description" content="Hill Holliday, an ad agency in Boston, U.S.A., needed a site where applicants could go to apply for their creative internship program.  Their designers created the bold concept. They then requested that I develop Program 35 to look and act like a “machine,” and gave me complete creative freedom to build it. Program 35 Features responsive design, the use of jQuery animate to resize the logo on page navigation, a 3rd party jQuery plugin to add in the vertical sliding navigation, and an HTML form complete with form validation and AJAX submission." />
+  <meta name="author" content="Jesse Carmine" />
+  <meta name="viewport" content="initial-scale=1">
+  <title>HHCC Intern Sign-up</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div id="contentSlide">
+    <div id="top">
+
+    	<!-- Program35 Logo -->
+      <div class="headerLogo">
+      	<div class="desktop">
+         <img class="center magic" src="images/logo.png" width="206" height="396" alt="35">
+        </div>
+        <div class="mobile">
+          <img class="center" src="images/logo.png" width="63" height="120" alt="35">
+        </div>
+      </div>
+
+     <!-- Deadline header. -->
+      <div class="deadline">
+        DEADLINE IS APRIL 15<sup style="font-size:10px;">TH</sup>
+      </div>
+
+      <!-- Site Navigation -->
+      <div class="nav">
+        <div id="menu" class="center">
+          <ul style="display:inline;">
+            <li class="startPage">
+              <a href="#" data-nav="homepage" title="" class="i2 current">ABOUT</a>
+            </li>
+            <li>
+              <a href="#" data-nav="apply" title="" class="i1"><span class="menu-label">APPLY</span></a>
+            </li>
+          </ul>
+          <div class="noNav">
+            <a href="mailto:carminej@gmail.com" target="_blank">CONTACT</a>
+            <a href="http://www.hhcc.com" target="blank">HHCC.COM</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Homepage -->
+    <div id="homepage" style="display:none">
+      <div class="caution">
+        <div class="wrapper">
+          <p class="copy"><strong>Do you have what it takes to be part of Program 35?</strong></p>
+          <p class="copy"><strong>We're looking for makers, thinkers, and hardworking individuals who want to work in the advertising industry.</strong></p>
+          <p class="copy"><strong>You must be relentless, fearless, and creatively driven. Our creative internship program throws you into the deep end, Having you work on real assignments with real deadlines and real-world challenges. You'll learn from some of the industry's best creative people and get a few free meals, too. We'll only accept the best for Program 35. Are you worthy?</strong></p>
+        </div>
+        <div class="footer">
+          <a href="http://www.hhcc.com" target="blank">
+            <img class="center" src="images/hh_logo.png" width="31" height="24" alt="HHCC">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup Form -->
+    <div id="apply" style="display:none">
+      <div class="caution">
+        <div class="wrapper">
+          <div class="form">
+            <p class="copy">
+            	<strong>This is a full-time gig, 40 hours a week, June&nbsp;2 - August&nbsp;22. We don't want people who think they might want to be in advertising. We want people who are ready to put up or shut up. This is a chance to show us what you've got. Sound good to you?</strong>
+            </p>
+            <p class="copy">
+            	<strong>Graduating seniors and graduate students only, please.</strong>
+            </p>
+            <p class="copy">
+              <strong>All fields are required.</strong>
+            </p>
+
+            <form action="http://program35.com/apply" method="post" accept-charset="utf-8" style="font-size:14px;" enctype="multipart/form-data">
+              <div class="table">
+                <label for="name" class="tableLabel"><strong>name:&nbsp;</strong></label>
+                <input type="text" name="name" id="name" class="tableField" />
+              </div>
+              <br>
+
+              <div class="table">
+                <label for="email" class="tableLabel"><strong>email&nbsp;address:&nbsp;</strong></label>
+                <input type="text" name="email" id="email" class="tableField" />
+              </div>
+              <br>
+
+              <div class="table">
+                <label for="phone" class="tableLabel"><strong>phone:&nbsp;</strong></label>
+                <input type="text" name="phone" id="phone" class="tableField" />
+              </div>
+              <br>
+
+              <div class="table">
+                <label for="userfile" class="tableLabel"><strong>resume:&nbsp;</strong></label>
+                <input type="file" id="userfile" style="display: none;" />
+                <input type="button" value="Browse..." onclick="document.getElementById('userfile').click();" />
+              </div>
+              <br>
+
+              <div class="table">
+                <label for="portfolio" class="tableLabel"><strong>portfolio&nbsp;url:&nbsp;</strong></label>
+                <input type="text" name="portfolio" id="portfolio" style="display:table-cell; width:100%;" />
+              </div>
+              <br>
+
+              <div class="table">
+                <label for="about" class="tableField"><strong>Tell&nbsp;us&nbsp;a&nbsp;little&nbsp;about yourself:</strong></label>
+              </div>
+              <div class="table">
+                <textarea name="about" id="about"></textarea>
+              </div>
+              <br>
+
+              <div class="table">
+                <label for="favorite" class="tableField"><strong>What's&nbsp;your&nbsp;favorite&nbsp;ad campaign?<br><span class="subText">(could&nbsp;be&nbsp;a&nbsp;campaign,&nbsp;a&nbsp;spot,&nbsp;a&nbsp;stunt, an&nbsp;app,&nbsp;etc.)</span></strong></label>
+              </div>
+              <div class="table">
+                <textarea name="favorite" id="favorite"></textarea>
+              </div>
+              <br>
+
+              <div class="table">
+                <label for="artist" class="tableField"><strong>What&nbsp;art&nbsp;or&nbsp;artist&nbsp;makes you&nbsp;jealous?<br><span class="subText">(musician,&nbsp;painter,&nbsp;writer,&nbsp;etc.)?</span></strong></label>
+              </div>
+              <div class="table">
+                <textarea name="artist" id="artist"></textarea>
+              </div>
+              <br>
+
+              <div class="table">
+                <label for="crazy" class="tableField"><strong>Tell&nbsp;us&nbsp;something&nbsp;you've done that others thought&nbsp;was&nbsp;crazy:</strong></label>
+              </div>
+              <div class="table">
+                <textarea name="crazy" id="crazy"></textarea>
+              </div>
+              <br>
+
+              <input class="submit" type="image" src="images/submit_button.jpg" alt="Submit" width="72" height="30">
+            </form>
+          </div>
+          <div class="processing" style="display:none; height: 240px; ">
+            <p style="font-size:14px"><strong>Processing...</strong><p>
+          </div>
+          <div class="thanks" style="display:none; height: 240px; ">
+            <p style="font-size:14px"><strong></strong><p>
+          </div>
+          <div class="error" style="display:none; height: 240px; ">
+            <p style="font-size:14px"><strong></strong><p>
+          </div>
+        </div>
+        <div class="footer">
+          <a href="http://www.hhcc.com" target="blank">
+            <img class="center" src="images/hh_logo.png" width="31" height="24" alt="HHCC">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Allows for site tracking with Google Analytics. -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-45115716-2', 'jessecarmine.com');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- Load jQuery. -->
+  <script type='text/javascript' src='js/jquery-1.8.2.min.js'></script>
+
+  <!-- Load jQuery plugin to handle navigation. -->
+  <script type="text/javascript" src="js/sliding_min.js"></script>
+
+  <script type="text/javascript">
+
+    $(document).ready(function (){
+
+		  // Form Validation and Submission
+      var submitForm = function(){
+
+				// Basic Field Validation
+				missingField = false;
+
+			  $("input[type='text'],input[type='file'],textarea").each(function(){
+			    if($(this).val() == "" && missingField == false) {
+					  alert("All fields are required.");
+					  missingField = true;
+			    }
+			  });
+
+				if(missingField) {
+					return;
+				}
+
+			  /* Submit the form with AJAX */
+			  var $this = $("form");
+			  var action = $this.attr("action");
+			  $(".form").hide();
+
+			  var formData = new FormData();
+        formData.append('userfile', $('#userfile').get(0).files[0]);
+
+        $("input[type='text'],textarea", $this).each(function(i) {
+          formData.append($(this).attr("name"), $(this).val());
+        });
+
+        $(window).scrollTop(0,0);
+
+        $(".processing").fadeIn('fast', function(){
+          $.ajax({
+            url: action,
+            type: "post",
+            contentType:false,
+            dataType: 'json',
+            processData: false,
+            cache: false,
+            data: formData,
+            success: function(response){
+              $(".processing").fadeOut('fast', function(){
+                if(response.status == "success") {
+                  $(".thanks strong").html(response.message);
+                  $(".thanks").fadeIn('fast');
+                } else {
+                  $(".error strong").html(response.message);
+                  $(".error").fadeIn('fast');
+                }
+              });
+            }
+          });
+        });
+      };
+
+			// Bind form submission to "Submit" button.
+			$(".submit").click(function(e){
+        e.preventDefault();
+        submitForm();
+      });
+      $("form").submit(function(e) {
+        e.preventDefault();
+        submitForm();
+      });
+
+			// Toggle the "35" logo to resize, using jQuery, when Menu items are clicked.
+      $(".i1").click(function() {
+        $(".magic").animate({height:'120', width: '63'}, 200);
+      });
+      $(".i2").click(function() {
+        $(".magic").animate({height:'396', width: '206'}, 200);
+      });
+
+			// Set options for JS navigation.
+      $("#menu ul li").slidingPage({
+        easing : 'easeInOutQuint',
+        speed : 800,
+				slideScroll : 'vertical', // not enabled on fade effect
+				top : 0, // it depends on menu height
+				navigation: {
+					show: true,
+					nestedPagesFlows: true
+				},
+			});
+
+      //On refresh, if #homepage is hidden, shrink the logo.
+      function delay(){
+        if ( $("#homepage").css('display') == 'none' ){
+          $(".magic").animate({height:'120', width: '63'}, 200);
+        }
+      }
+      setTimeout(delay, 20);
+    });
+  </script>
+
+</body>
+</html>
